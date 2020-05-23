@@ -22,7 +22,7 @@ class User(UserMixin, db.Model):
 
 
 @login.user_loader
-def load_user(id):
+def load_user(id): #essentially we need to register the current user's ID in session storage so app knows which user's profile is currently in use
     return User.query.get(int(id))
 
 
